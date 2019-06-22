@@ -15,7 +15,7 @@ namespace HostelManagementService.Controllers
         {
             _configuration = configuration;
         }
-        [HttpPost]
+        [HttpGet]
         public IList<Tenant> GetAllTenantDetails()
         {
             IList<Tenant> tenants = new List<Tenant>();

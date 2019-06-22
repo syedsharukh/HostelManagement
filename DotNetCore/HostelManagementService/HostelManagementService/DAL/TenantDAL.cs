@@ -38,7 +38,7 @@ namespace HostelManagementService.DAL
                             tenant.Gender = reader["Gender"].ToString();
                             tenant.Email = reader["Email"].ToString();
                             tenant.Address = reader["Address"].ToString();
-                            tenant.DateOfJoining = Convert.ToDateTime(reader["DateOfJoining"].ToString());
+                            tenant.DateOfJoining = string.IsNullOrEmpty(reader["DateOfJoining"].ToString())?new DateTime():Convert.ToDateTime(reader["DateOfJoining"].ToString());
                             tenant.Age = Convert.ToInt32(reader["Age"].ToString());
                             tenant.AdvanceAmount = Convert.ToDecimal(reader["AdvanceAmount"].ToString());
                             tenant.Referral = reader["Referral"].ToString();
