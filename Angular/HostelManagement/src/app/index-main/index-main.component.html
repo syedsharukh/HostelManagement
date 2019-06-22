@@ -1,0 +1,23 @@
+<app-navigation-bar></app-navigation-bar>
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-md-3" *ngFor="let tenant of tenants">
+        <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="thumbnail profile-display"><p><b>{{tenant.FirstName.substring(0,1)}}{{tenant.LastName.substring(0,1)}}</b><p></div>
+              </div>
+              <div class="col-md-8">
+                  <p><b>First Name :</b>{{tenant.FirstName}}</p>
+                  <p><b>Last Name :</b>{{tenant.LastName}}</p>
+              </div>
+            </div>
+             
+              <p><b>Email : </b>{{tenant.Email}}</p>
+              <p><b>Phone Number :</b>{{tenant.phonenumber}}</p>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

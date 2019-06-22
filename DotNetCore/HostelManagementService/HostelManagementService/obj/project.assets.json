@@ -11801,11 +11801,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MyProjects\\DotNetCore\\HostelManagementService\\HostelManagementService\\HostelManagementService.csproj",
+      "projectUniqueName": "D:\\MyProjects\\HostelManagement\\DotNetCore\\HostelManagementService\\HostelManagementService\\HostelManagementService.csproj",
       "projectName": "HostelManagementService",
-      "projectPath": "D:\\MyProjects\\DotNetCore\\HostelManagementService\\HostelManagementService\\HostelManagementService.csproj",
+      "projectPath": "D:\\MyProjects\\HostelManagement\\DotNetCore\\HostelManagementService\\HostelManagementService\\HostelManagementService.csproj",
       "packagesPath": "C:\\Users\\ssyed\\.nuget\\packages\\",
-      "outputPath": "D:\\MyProjects\\DotNetCore\\HostelManagementService\\HostelManagementService\\obj\\",
+      "outputPath": "D:\\MyProjects\\HostelManagement\\DotNetCore\\HostelManagementService\\HostelManagementService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
