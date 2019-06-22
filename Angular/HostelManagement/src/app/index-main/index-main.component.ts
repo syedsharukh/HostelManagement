@@ -10,20 +10,20 @@ export class IndexMainComponent implements OnInit {
   constructor() { }
   public tenants : any= [
     {
-      "FirstName" : "Ajay",
-      "LastName" : "Kumar",
+      "Name" : "Ajay",
+      "DOJ" : "22-06-2019",
       "Email" : "ajay@gmail.com",
       "phonenumber" : "8494516498"
     },
     {
-      "FirstName" : "Gowtham",
-      "LastName" : "Susarla",
+      "Name" : "Gowtham",
+      "DOJ" : "22-06-2019",
       "Email" : "gowtham@gmail.com",
       "phonenumber" : "8494656544"
     },
     {
-      "FirstName" : "Hemanth",
-      "LastName" : "Kumar",
+      "Name" : "Hemanth",
+      "DOJ" : "22-06-2019",
       "Email" : "hemanth@gmail.com",
       "phonenumber" : "494454654"
     }
