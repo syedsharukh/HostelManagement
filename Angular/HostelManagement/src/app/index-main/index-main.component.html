@@ -1,42 +1,115 @@
-
 <div class="container-fluid">
   <div class="row">
-      <div class="col-md-3" *ngFor="let tenant of tenants">
-        <div id="profile" class="card shadow-sm p-3 mb-5 bg-white rounded">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="profile-display"><p><b>{{tenant.name.substring(0,1)}}</b><p></div>
+    <div class="col-md-4 m-auto">
+      <div class="input-group" id="adv-search">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search for snippets"
+        />
+        <div class="input-group-btn">
+          <div class="btn-group" role="group">
+            <div class="dropdown dropdown-lg">
+              <button
+                type="button"
+                class="btn btn-default dropdown-toggle"
+                data-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <span class="caret"></span>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right" role="menu">
+                <form class="form-horizontal" role="form">
+                  <div class="form-group">
+                    <label for="filter">Filter by</label>
+                    <select class="form-control">
+                      <option value="0" selected>All Snippets</option>
+                      <option value="1">Featured</option>
+                      <option value="2">Most popular</option>
+                      <option value="3">Top rated</option>
+                      <option value="4">Most commented</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="contain">Author</label>
+                    <input class="form-control" type="text" />
+                  </div>
+                  <div class="form-group">
+                    <label for="contain">Contains the words</label>
+                    <input class="form-control" type="text" />
+                  </div>
+                  <button type="submit" class="btn btn-primary">
+                    <span
+                      class="fa fa-search"
+                      aria-hidden="true"
+                    ></span>
+                  </button>
+                </form>
               </div>
-              <div class="col-md-8">
-                  <table>
-                    <tr>
-                      <td>
-                          <i class="fa fa-user fa-1x" aria-hidden="true"></i>&nbsp;: {{tenant.name}}
-                      </td>
-                    </tr>
-                    <tr *ngIf="tenant.mobileNumber">
-                        <td>
-                            <i class="fa fa-phone fa-1x" aria-hidden="true"></i>&nbsp;: {{tenant.mobileNumber}}
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                            <i class="fa fa-history" aria-hidden="true"></i>&nbsp;: {{tenant.dateOfJoining | timeAgo}}
-                        </td>
-                      </tr>
-                  </table>
-              </div>
-            </div> 
-            
-                <div style="text-align: right">
-                  <span *ngIf="tenant.isActive" class="badge badge-success">Active</span>
-                  <span *ngIf="!tenant.isActive" class="badge badge-danger">Not Active</span>
-               </div>
-            
+            </div>
+            <button type="button" class="btn btn-primary">
+              <span
+                class="fa fa-search"
+                aria-hidden="true"
+              ></span>
+            </button>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-md-3" *ngFor="let tenant of tenants">
+      <div id="profile" class="card shadow-sm p-3 mb-5 bg-white rounded">
+        <div class="card-body" id="#myTable">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="profile-display">
+                <p>
+                  <b>{{ tenant.name.substring(0, 1) }}</b>
+                </p>
+                <p></p>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <table>
+                <tr>
+                  <td>
+                    <i class="fa fa-user fa-1x" aria-hidden="true"></i>&nbsp;:
+                    {{ tenant.name }}
+                  </td>
+                </tr>
+                <tr *ngIf="tenant.mobileNumber">
+                  <td>
+                    <i class="fa fa-phone fa-1x" aria-hidden="true"></i>&nbsp;:
+                    {{ tenant.mobileNumber }}
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fa fa-history" aria-hidden="true"></i>&nbsp;:
+                    {{ tenant.dateOfJoining | timeAgo }}
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <div style="text-align: right">
+            <span *ngIf="tenant.isActive" class="badge badge-success"
+              >Active</span
+            >
+            <span *ngIf="!tenant.isActive" class="badge badge-danger"
+              >Not Active</span
+            >
+          </div>
+        </div>
+        <div class="card-read-more">
+          <a href="javascript:void(0)" class="btn btn-link btn-block">
+            View More
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-
