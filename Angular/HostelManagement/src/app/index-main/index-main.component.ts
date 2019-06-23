@@ -1,7 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { UtilServiceService } from '../shared/util-service.service';
-import { MatDialog, MatDialogConfig } from '@angular/material';
-import { PopupTenantComponent } from '../popup-tenant/popup-tenant.component';
 @Component({
   selector: 'app-index-main',
   templateUrl: './index-main.component.html',
@@ -11,7 +9,6 @@ export class IndexMainComponent implements OnInit {
 
   constructor(private util:UtilServiceService) { }
   public results:any=[];
-  constructor(private util:UtilServiceService, private dialog: MatDialog) { }
   public tenants:any=[];
   // public tenants : any= [
   //   {
