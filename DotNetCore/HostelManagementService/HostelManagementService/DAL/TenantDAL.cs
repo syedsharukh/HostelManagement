@@ -5,6 +5,7 @@ using System.Data;
 using Microsoft.Extensions.Configuration;
 using System;
 using HostelManagementService.Shared;
+using System.Linq;
 
 namespace HostelManagementService.DAL
 {
@@ -49,7 +50,7 @@ namespace HostelManagementService.DAL
                     }
                 }
             }
-            return tenants;
+            return tenants.OrderBy(x=>x.Name).ToList();
         }
 
         public bool InsertTenantDetails(Tenant tenant)

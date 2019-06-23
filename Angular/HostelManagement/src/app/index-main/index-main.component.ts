@@ -40,6 +40,7 @@ export class IndexMainComponent implements OnInit {
       this.tenants=res;
     });
   }
+  
   FilterTenants(element : any)
   {
     var keyword = element.target.value.toLowerCase();
