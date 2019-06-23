@@ -12,6 +12,7 @@ namespace HostelManagementService.Controllers
     {
         public TenantController()
         {
+            
         }
         [HttpGet]
         public IList<Tenant> GetAllTenantDetails()
