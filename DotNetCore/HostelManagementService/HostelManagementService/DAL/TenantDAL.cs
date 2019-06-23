@@ -5,6 +5,7 @@ using System.Data;
 using Microsoft.Extensions.Configuration;
 using System;
 using HostelManagementService.Shared;
+using System.Linq;
 
 namespace HostelManagementService.DAL
 {
@@ -49,7 +50,36 @@ namespace HostelManagementService.DAL
                     }
                 }
             }
-            return tenants;
+            return tenants.OrderBy(x=>x.Name).ToList();
+        }
+
+        public bool InsertTenantDetails(Tenant tenant)
+        {
+            bool isInserted = true;
+            string connString = _configuration;
+            using (SqlConnection conn = new SqlConnection())
+            {
+                conn.ConnectionString = connString;
+                using (SqlCommand command = new SqlCommand("[dbo].InsertTenantDetails", conn))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@Name", tenant.Name);
+                    command.Parameters.AddWithValue("@MobileNo", tenant.MobileNumber);
+                    command.Parameters.AddWithValue("@AlternateMobileNo", tenant.AlternativeMobileNumber);
+                    command.Parameters.AddWithValue("@Email", tenant.Email);
+                    command.Parameters.AddWithValue("@Address", tenant.Address);
+                    command.Parameters.AddWithValue("@DateOfJoining", tenant.DateOfJoining);
+                    command.Parameters.AddWithValue("@Gender", tenant.Gender);
+                    command.Parameters.AddWithValue("@Age", tenant.Age);
+                    command.Parameters.AddWithValue("@AdvanceAmount", tenant.AdvanceAmount);
+                    command.Parameters.AddWithValue("@Referral", tenant.Referral);
+                    conn.Open();
+                    command.ExecuteNonQuery();
+                   
+                    return isInserted;
+                }
+            }
+
         }
     }
 }

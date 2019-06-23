@@ -21,5 +21,10 @@ namespace HostelManagementService.Controllers
             tenants = new TenantBLL().GetAllTenantDetails();
             return tenants;
         }
+        [HttpPost]
+        public bool InsertTenantDetails(Tenant tenant)
+        {
+            return new TenantBLL().InsertTenantDetails(tenant);
+        }
     }
 }
