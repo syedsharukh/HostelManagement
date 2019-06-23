@@ -4,47 +4,12 @@
       <div class="input-group" id="adv-search">
         <input
           type="text"
-          class="form-control" id="searchTenants"
-          placeholder="Search for snippets"
+          class="form-control" id="searchTenants" name="searchTenants"
+          placeholder="Search for Name and Mobile No" (keyup)="FilterTenants($event)"
         />
         <div class="input-group-btn">
-          <div class="btn-group" role="group">
-            <div class="dropdown dropdown-lg">
-              <button
-                type="button"
-                class="btn btn-default dropdown-toggle"
-                data-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <span class="caret"></span>
-              </button>
-              <div class="dropdown-menu dropdown-menu-right" role="menu">
-                <form class="form-horizontal" role="form">
-                  <div class="form-group">
-                    <label for="filter">Filter by</label>
-                    <select class="form-control">
-                      <option value="0" selected>All Snippets</option>
-                      <option value="1">Featured</option>
-                      <option value="2">Most popular</option>
-                      <option value="3">Top rated</option>
-                      <option value="4">Most commented</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="contain">Author</label>
-                    <input class="form-control" type="text" />
-                  </div>
-                  <div class="form-group">
-                    <label for="contain">Contains the words</label>
-                    <input class="form-control" type="text" />
-                  </div>
-                  <button type="submit" class="btn btn-primary">
-                    <span class="fa fa-search" aria-hidden="true"></span>
-                  </button>
-                </form>
-              </div>
-            </div>
-            <button type="button" class="btn btn-primary">
+          <div class="btn-group" role="group">            
+            <button type="button" class="btn btn-primary" >
               <span class="fa fa-search" aria-hidden="true"></span>
             </button>
           </div>
@@ -53,9 +18,9 @@
     </div>
   </div>
   <div class="row mt-4">
-    <div class="col-md-3" *ngFor="let tenant of tenants">
+    <div class="col-md-3"  *ngFor="let tenant of tenants ">
       <div id="profile" class="card shadow-sm p-3 mb-5 bg-white rounded">
-        <div class="card-body" id="#myTable">
+        <div class="card-body" id="myTable">
           <div class="row">
             <div class="col-md-4">
               <div class="profile-display">
@@ -65,8 +30,8 @@
                 <p></p>
               </div>
             </div>
-            <div class="col-md-8 tenantResults">
-              <table>
+            <div class="col-md-8" >
+              <table id="tenantResults"> 
                 <tr>
                   <td>
                     <i class="fa fa-user fa-1x" aria-hidden="true" title="Name"></i>&nbsp;:
@@ -99,24 +64,11 @@
           </div>
         </div>
         <div class="card-read-more">
-          <a href="javascript:void(0)" class="btn btn-link btn-block">
+          <a href="javascript:void(0)" class="btn btn-link btn-block" (click)="ViewMore()">
             View More
           </a>
-        </div>
-      </div>
+       
     </div>
   </div>
 </div>
-<script>
-$("#searchTenants").on("keyup", function() {
-    var keyword = $(this).val().toLowerCase();
-    $("#tenantResults td").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(keyword) > -1)
-    });
-  });
-
-  $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
-</script>
-
+<script src="src/app/script/index1.js"></script>

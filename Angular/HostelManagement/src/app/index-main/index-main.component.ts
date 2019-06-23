@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { UtilServiceService } from '../shared/util-service.service';
 
 @Component({
@@ -9,7 +9,9 @@ import { UtilServiceService } from '../shared/util-service.service';
 export class IndexMainComponent implements OnInit {
 
   constructor(private util:UtilServiceService) { }
+  public results:any=[];
   public tenants:any=[];
+  @Input() searchTenants;
   // public tenants : any= [
   //   {
   //     "Name" : "Ajay",
@@ -33,9 +35,21 @@ export class IndexMainComponent implements OnInit {
   ngOnInit() {
    this.util.getTenateDetails().subscribe(res=>
     {
-      console.log(res);
+      console.table(res);
+      this.results = res;
       this.tenants=res;
     });
+  }
+  FilterTenants(element : any)
+  {
+    var keyword = element.target.value.toLowerCase();
+    if(keyword.length > 0){
+      this.tenants=this.results.filter(x => x.name.toLowerCase().includes(keyword)||x.mobileNumber.toLowerCase().includes(keyword));
+    }
+    else{
+      this.tenants=this.results;
+    }
+    
   }
  
 }
