@@ -4,7 +4,7 @@
       <div class="input-group" id="adv-search">
         <input
           type="text"
-          class="form-control"
+          class="form-control" id="searchTenants"
           placeholder="Search for snippets"
         />
         <div class="input-group-btn">
@@ -71,7 +71,7 @@
                 <p></p>
               </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8 tenantResults">
               <table>
                 <tr>
                   <td>
@@ -113,3 +113,11 @@
     </div>
   </div>
 </div>
+<script>
+$("#searchTenants").on("keyup", function() {
+    var keyword = $(this).val().toLowerCase();
+    $("#tenantResults td").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(keyword) > -1)
+    });
+  });
+</script>
