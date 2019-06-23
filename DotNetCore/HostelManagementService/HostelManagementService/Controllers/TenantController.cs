@@ -10,16 +10,14 @@ namespace HostelManagementService.Controllers
     [ApiController]
     public class TenantController : ControllerBase
     {
-        private IConfiguration _configuration = null;
-        public TenantController(IConfiguration configuration)
+        public TenantController()
         {
-            _configuration = configuration;
         }
         [HttpGet]
         public IList<Tenant> GetAllTenantDetails()
         {
             IList<Tenant> tenants = new List<Tenant>();
-            tenants = new TenantBLL(_configuration).GetAllTenantDetails();
+            tenants = new TenantBLL().GetAllTenantDetails();
             return tenants;
         }
     }

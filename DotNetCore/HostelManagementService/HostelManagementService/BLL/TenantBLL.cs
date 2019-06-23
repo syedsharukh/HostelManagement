@@ -6,15 +6,13 @@ namespace HostelManagementService.BLL
 {
     public class TenantBLL
     {
-        private IConfiguration _configuration = null;
-        public TenantBLL(IConfiguration configuration)
+        public TenantBLL()
         {
-            _configuration = configuration;
         }
         public IList<Tenant> GetAllTenantDetails()
         {
             IList<Tenant> tenants = new List<Tenant>();
-            tenants = new TenantDAL(_configuration).GetAllTenantDetails();
+            tenants = new TenantDAL().GetAllTenantDetails();
             return tenants;
         }
     }

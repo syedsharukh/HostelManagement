@@ -4,21 +4,22 @@ using System.Data.SqlClient;
 using System.Data;
 using Microsoft.Extensions.Configuration;
 using System;
+using HostelManagementService.Shared;
 
 namespace HostelManagementService.DAL
 {
     public class TenantDAL
     {
-        private IConfiguration _configuration = null;
-        public TenantDAL(IConfiguration configuration)
+        private static string _configuration = string.Empty;
+        public TenantDAL()
         {
-            _configuration = configuration;
+            _configuration = ConnectionUtil.AppSettings["DefaultConnection"];
         }
         public IList<Tenant> GetAllTenantDetails()
         {
             IList<Tenant> tenants = null;
             Tenant tenant = null;
-            string connString = _configuration.GetSection("DefaultConnection").Value;
+            string connString = _configuration;
             using (SqlConnection conn = new SqlConnection())
             {
                 conn.ConnectionString = connString;
