@@ -59,8 +59,8 @@
           <div class="row">
             <div class="col-md-4">
               <div class="profile-display">
-                <p>
-                  <b>{{ tenant.name.substring(0, 1) }}</b>
+                <p style="font-size: 30px;">
+                  <b>{{ tenant.name.substring(0, 1).toUpperCase() }}</b>
                 </p>
                 <p></p>
               </div>
@@ -69,19 +69,19 @@
               <table>
                 <tr>
                   <td>
-                    <i class="fa fa-user fa-1x" aria-hidden="true"></i>&nbsp;:
+                    <i class="fa fa-user fa-1x" aria-hidden="true" title="Name"></i>&nbsp;:
                     {{ tenant.name }}
                   </td>
                 </tr>
                 <tr *ngIf="tenant.mobileNumber">
                   <td>
-                    <i class="fa fa-phone fa-1x" aria-hidden="true"></i>&nbsp;:
+                    <i class="fa fa-phone fa-1x" aria-hidden="true" title="ContactNo"></i>&nbsp;:
                     {{ tenant.mobileNumber }}
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <i class="fa fa-history" aria-hidden="true"></i>&nbsp;:
+                    <i class="fa fa-history" aria-hidden="true" title="Time ago"></i>&nbsp;:
                     {{ tenant.dateOfJoining | timeAgo }}
                   </td>
                 </tr>
@@ -89,7 +89,7 @@
             </div>
           </div>
 
-          <div style="text-align: right">
+          <div style="text-align: right" >
             <span *ngIf="tenant.isActive" class="badge badge-success"
               >Active</span
             >
@@ -107,3 +107,9 @@
     </div>
   </div>
 </div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
