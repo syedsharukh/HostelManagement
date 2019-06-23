@@ -10,6 +10,7 @@ import {TimeAgoPipe} from 'time-ago-pipe';
 import { MatDialogModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PopupTenantComponent } from './popup-tenant/popup-tenant.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { PopupTenantComponent } from './popup-tenant/popup-tenant.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    NgxPaginationModule
     MatDialogModule,
     BrowserAnimationsModule,
     ReactiveFormsModule

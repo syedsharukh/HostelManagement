@@ -23,7 +23,7 @@
     </div>
   </div>
   <div class="row mt-4">
-    <div class="col-md-3"  *ngFor="let tenant of tenants ">
+    <div class="col-md-3"  *ngFor="let tenant of tenants | paginate : {itemsPerPage: 8, currentPage: p}">
       <div id="profile" class="card shadow-sm p-3 mb-5 bg-white rounded">
         <div class="card-body" id="myTable">
           <div class="row">
@@ -76,3 +76,5 @@
     </div>
   </div>
 </div>
+
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
