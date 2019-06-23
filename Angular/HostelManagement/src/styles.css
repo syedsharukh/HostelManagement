@@ -30,3 +30,6 @@ table {
     font-weight:600;
     text-transform: uppercase
   }
+  .ngx-pagination a{
+    text-decoration: none !important;
+}

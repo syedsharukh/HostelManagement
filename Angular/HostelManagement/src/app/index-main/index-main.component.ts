@@ -51,12 +51,5 @@ export class IndexMainComponent implements OnInit {
     
   }
  
-  onCreate() {
-    const dialogConfig =  new MatDialogConfig();
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
-    dialogConfig.width = "40%";
-    this.dialog.open(PopupTenantComponent, dialogConfig);
-  }
  
 }

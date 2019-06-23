@@ -19,7 +19,7 @@
   </div>
   <div class="row">
     <div class="col-md-12">
-        <button type="button"s class="btn btn-primary" (click)="onCreate()"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Create Tenant</button>
+        <button type="button" class="btn btn-primary" (click)="onCreate()"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Create Tenant</button>
     </div>
   </div>
   <div class="row mt-4">
@@ -76,5 +76,9 @@
     </div>
   </div>
 </div>
-
+<div  class="col-md-12" style="text-align: center" *ngIf="!tenants.length>0">
+    <h2>No Tenants Found.</h2>
+  </div>
+<div class="col-md-12" *ngIf="tenants.length>8">
 <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>

@@ -4,3 +4,6 @@
 .invisible{
     display: none;
 }
+.ngx-pagination a:hover{
+    text-decoration: none !important;
+}
