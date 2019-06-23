@@ -68,10 +68,11 @@ namespace HostelManagementService.DAL
                     command.Parameters.AddWithValue("@AlternateMobileNo", tenant.AlternativeMobileNumber);
                     command.Parameters.AddWithValue("@Email", tenant.Email);
                     command.Parameters.AddWithValue("@Address", tenant.Address);
-                    command.Parameters.AddWithValue("@DateOfJoining", tenant.DateOfJoining);
+                    command.Parameters.AddWithValue("@DateOfJoining", DateTime.Now);
                     command.Parameters.AddWithValue("@Gender", tenant.Gender);
                     command.Parameters.AddWithValue("@Age", tenant.Age);
                     command.Parameters.AddWithValue("@AdvanceAmount", tenant.AdvanceAmount);
+                    command.Parameters.AddWithValue("@IsActive", tenant.IsActive);
                     command.Parameters.AddWithValue("@Referral", tenant.Referral);
                     conn.Open();
                     command.ExecuteNonQuery();

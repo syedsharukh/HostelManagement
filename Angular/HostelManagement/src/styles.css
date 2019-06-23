@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
 div.profile-display {
     background-color: #1fc8db;
     font-size: 1.1em;
@@ -29,4 +30,8 @@ table {
     padding:10px;
     font-weight:600;
     text-transform: uppercase
+  }
+  div.msg {
+    color:red;
+    font-size: small;
   }

@@ -1,0 +1,141 @@
+<div class="row">
+  <!-- <div class="col-md-12">
+      <button type="button" class="btn btn-primary" (click)="onClose()">close Tenant</button>
+  </div> -->
+  <div class="col-md-12">
+      <form role="form" name="tenantForm" novalidate [formGroup]="addTenantForm">
+       
+          <label >Tenant Personal Information</label>
+          <div class="form-group">
+          <div class="input-group mb-3">
+              
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"><i class="fa fa-user fa-1x" aria-hidden="true"></i></span>
+              </div>
+              <input type="text" class="form-control" formControlName="name" pattern="[A-Za-z]*" placeholder="Tenant Name" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div class="msg" *ngIf="addTenantForm.controls['name'].invalid && (addTenantForm.controls['name'].dirty || addTenantForm.controls['name'].touched)">
+            <div *ngIf="addTenantForm.controls['name'].hasError('required')">
+                <div>Required</div>
+              </div>
+              <div *ngIf="addTenantForm.controls['name'].errors.pattern">
+                  Only alphabets allowed.
+              </div>
+              </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-phone fa-1x" aria-hidden="true"></i></span>
+                </div>
+              <input type="text" class="form-control" formControlName="mobileNumber"  pattern="[0-9]*" maxlength="10" placeholder="Mobile Number" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            </div>
+            <div class="msg" *ngIf="addTenantForm.controls['mobileNumber'].invalid && (addTenantForm.controls['mobileNumber'].dirty || addTenantForm.controls['mobileNumber'].touched)">
+                <div *ngIf="addTenantForm.controls['mobileNumber'].hasError('required')">
+                    <div>Required</div>
+                </div>
+                <div *ngIf="addTenantForm.controls['mobileNumber'].errors.pattern">
+                      Only numbers allowed.
+                </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-phone fa-1x" aria-hidden="true"></i></span>
+                </div>
+              <input type="text" class="form-control" formControlName="aMobileNumber" pattern="[0-9]*" maxlength="10" placeholder="Alternate Mobile Number" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            </div>
+            <div class="msg" *ngIf="addTenantForm.controls['aMobileNumber'].invalid && (addTenantForm.controls['aMobileNumber'].dirty || addTenantForm.controls['aMobileNumber'].touched)">
+                <div *ngIf="addTenantForm.controls['aMobileNumber'].hasError('required')">
+                    <div>Required</div>
+                </div>
+                <div *ngIf="addTenantForm.controls['aMobileNumber'].errors.pattern">
+                      Only numbers allowed.
+                </div>
+            </div>
+          </div>
+          <div class="form-group">
+
+          
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope-open" aria-hidden="true"></i></span>
+                </div>
+              <input type="text" class="form-control" formControlName="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="E-mail" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            </div>
+            <div class="msg" *ngIf="addTenantForm.controls['email'].invalid && (addTenantForm.controls['email'].dirty || addTenantForm.controls['email'].touched)">
+                <div *ngIf="addTenantForm.controls['email'].hasError('required')">
+                    <div>Required</div>
+                </div>
+                <div *ngIf="addTenantForm.controls['email'].errors.pattern">
+                      Invalid Email.
+                </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group mb-3">
+                <label class="radio-gender">
+                    <input type="radio" name="gender" id="male" value="M" formControlName="gender" checked>Male
+                  </label>
+                  <label class="radio-gender">
+                    <input type="radio" name="gender" id="female" formControlName="gender"  value="F">Female
+                  </label>
+                  <label class="radio-gender">
+                    <input type="radio" name="gender" id="other" formControlName="gender" value="O">Other
+                  </label>
+            </div>
+            <div class="msg" *ngIf="addTenantForm.controls['gender'].invalid && (addTenantForm.controls['gender'].dirty || addTenantForm.controls['gender'].touched)">
+                <div *ngIf="addTenantForm.controls['gender'].hasError('required')">
+                    <div>Required</div>
+                </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-address-book" aria-hidden="true"></i>
+                    </span>
+                </div>
+              <input type="text" class="form-control" formControlName="address" placeholder="Address" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-child" aria-hidden="true"></i>
+                    </span>
+                </div>
+              <input type="text" class="form-control" formControlName="age" placeholder="Age" pattern="[0-9]*" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            </div>
+            <div class="msg" *ngIf="addTenantForm.controls['age'].invalid && (addTenantForm.controls['age'].dirty || addTenantForm.controls['age'].touched)">
+                <div *ngIf="addTenantForm.controls['age'].hasError('required')">
+                    <div>Required</div>
+                </div>
+                <div *ngIf="addTenantForm.controls['age'].errors.pattern">
+                      Only numbers allowed.
+                </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+              </div>
+              <input type="text" class="form-control" formControlName="advanceAmount" placeholder="Adavance Amount" aria-label="Amount (to the nearest dollar)">
+              <div class="input-group-append">
+                <span class="input-group-text">.00</span>
+              </div>
+            </div>
+          </div>
+            <div class="row">
+              <div class="col-md-3 offset-md-7">
+                  <button type="button" class="btn btn-outline-primary" (click)="addTenant()">Add Tenant</button>
+              </div> 
+              <div class="col-md-2">
+                      <button type="button" class="btn btn-outline-dark" (click)="onClose()">Cancel</button>
+              </div>
+            </div>
+      </form>
+  </div>
+</div>
