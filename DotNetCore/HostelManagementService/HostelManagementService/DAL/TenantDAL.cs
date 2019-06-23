@@ -35,7 +35,7 @@ namespace HostelManagementService.DAL
                             tenant = new Tenant();
                             tenant.TenantId = Convert.ToInt32(reader["TenantId"].ToString());
                             tenant.Name = reader["Name"].ToString();
-                            tenant.MobileNumber = reader["AlternateMobileNo"].ToString();
+                            tenant.MobileNumber = reader["MobileNo"].ToString();
                             tenant.Gender = reader["Gender"].ToString();
                             tenant.Email = reader["Email"].ToString();
                             tenant.Address = reader["Address"].ToString();
