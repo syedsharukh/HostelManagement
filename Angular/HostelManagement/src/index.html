@@ -10,5 +10,16 @@
 </head>
 <body>
   <app-root></app-root>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+      $(document).on("mouseenter", "#profile", function() {
+    // hover starts code here
+    $(this).removeClass("card shadow-sm p-3 mb-5 bg-white rounded").addClass("card shadow-lg p-3 mb-5 bg-white rounded");
+      });
+      $(document).on("mouseleave", "#profile", function() {
+    // hover starts code here
+    $(this).removeClass("card shadow-lg p-3 mb-5 bg-white rounded").addClass("card shadow-sm p-3 mb-5 bg-white rounded");
+      });
+  </script>
 </body>
 </html>

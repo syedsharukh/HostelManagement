@@ -2,21 +2,41 @@
 <div class="container-fluid">
   <div class="row">
       <div class="col-md-3" *ngFor="let tenant of tenants">
-        <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+        <div id="profile" class="card shadow-sm p-3 mb-5 bg-white rounded">
           <div class="card-body">
             <div class="row">
               <div class="col-md-4">
-                <div class="thumbnail profile-display"><p><b>{{tenant.name.substring(0,1)}}</b><p></div>
+                <div class="profile-display"><p><b>{{tenant.name.substring(0,1)}}</b><p></div>
               </div>
               <div class="col-md-8">
-                  <p><b>Name :</b>{{tenant.name}}</p>
-                  <p><b>Joined :</b>{{tenant.dateOfJoining | timeAgo}}</p>
+                  <table>
+                    <tr>
+                      <td>
+                          <i class="fa fa-user fa-1x" aria-hidden="true"></i>&nbsp;: {{tenant.name}}
+                      </td>
+                    </tr>
+                    <tr *ngIf="tenant.mobileNumber">
+                        <td>
+                            <i class="fa fa-phone fa-1x" aria-hidden="true"></i>&nbsp;: {{tenant.mobileNumber}}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                            <i class="fa fa-history" aria-hidden="true"></i>&nbsp;: {{tenant.dateOfJoining | timeAgo}}
+                        </td>
+                      </tr>
+                  </table>
               </div>
-            </div>    
-              <p><b>Email : </b>{{tenant.email}}</p>
-              <p *ngIf="tenant.mobileNumber"><b>Phone Number :</b>{{tenant.mobileNumber}}</p>  
+            </div> 
+            
+                <div style="text-align: right">
+                  <span *ngIf="tenant.isActive" class="badge badge-success">Active</span>
+                  <span *ngIf="!tenant.isActive" class="badge badge-danger">Not Active</span>
+               </div>
+            
           </div>
         </div>
       </div>
   </div>
 </div>
+
