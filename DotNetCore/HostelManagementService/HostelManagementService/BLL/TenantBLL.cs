@@ -17,7 +17,6 @@ namespace HostelManagementService.BLL
             tenants = new TenantDAL().GetAllTenantDetails();
             return tenants;
         }
-
         internal bool InsertTenantDetails(Tenant tenant)
         {
             return new TenantDAL().InsertTenantDetails(tenant);
