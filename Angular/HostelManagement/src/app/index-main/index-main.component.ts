@@ -11,7 +11,6 @@ export class IndexMainComponent implements OnInit {
   constructor(private util:UtilServiceService, private dialog: MatDialog) { }
   public results:any=[];
   public tenants:any=[];
-  public results:any=[];
   ngOnInit() {
     this.getTenateDetails();
   }
