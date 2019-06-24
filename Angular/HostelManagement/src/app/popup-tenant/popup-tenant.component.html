@@ -130,7 +130,7 @@
           </div>
             <div class="row">
               <div class="col-md-3 offset-md-7">
-                  <button type="button" class="btn btn-outline-primary" (click)="addTenant()">Add Tenant</button>
+                  <button type="button" class="btn btn-outline-primary" [disabled] = !addTenantForm.valid (click)="addTenant()">Add Tenant</button>
               </div> 
               <div class="col-md-2">
                       <button type="button" class="btn btn-outline-dark" (click)="onClose()">Cancel</button>
